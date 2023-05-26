@@ -2,8 +2,6 @@
 WORKDIR /App
 EXPOSE 8080
 EXPOSE 443
-ENV ASPNETCORE_URLS=http://*:8080
-
 
 # Copy everything
 COPY . ./
