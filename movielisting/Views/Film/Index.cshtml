@@ -1,0 +1,38 @@
+﻿@model List<Film>
+
+@{
+    ViewData["Title"] = "Movies Release Years";
+}
+
+<h1 class="bg-info text-white">Movies Release Years</h1>
+<a class="btn btn-block btn-success" asp-action="AddNew">Add a New Movie</a>
+<div>
+    <table class="table">
+        <tr>
+            <th>S#</th>
+            <th>Movie Name</th>
+            <th>Release Year</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+        @if(Model != null){
+            @foreach (Film flm in Model)
+            {
+                <tr>
+                    <td>@flm.No</td>
+                    <td>@flm.MovieName</td>
+                    <td>@flm.ReleaseYear</td>
+                    <td>
+                        <a asp-route-id="@flm.No" class="btn btn-block btn-dark" asp-action="Modify">Edit</a>
+                    </td>
+                    <td>
+                        <form asp-route-id="@flm.No" method="post" asp-action="Rem">
+                            <input class="btn-warning btn btn-block" value="Remove" type="submit" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        
+    </table>
+</div>

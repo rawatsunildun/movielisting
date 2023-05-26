@@ -1,0 +1,7 @@
+﻿sqldb:
+  image: mcr.microsoft.com/mssql/server:2019-latest
+  environment:
+    - SA_PASSWORD=M@b3iDev#U$er
+    - ACCEPT_EULA=Y
+  ports:
+    - "1440:1433"
