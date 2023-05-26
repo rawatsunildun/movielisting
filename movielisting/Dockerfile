@@ -1,6 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /App
-EXPOSE 5337
+
 
 # Copy everything
 COPY . ./
@@ -12,5 +12,8 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /App
+EXPOSE 5000
+ENV ASPNETCORE_URLS=http://+:5000
+
 COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "movielisting.dll"]
