@@ -3,5 +3,6 @@
   environment:
     - SA_PASSWORD=M@b3iDev#U$er
     - ACCEPT_EULA=Y
+    - MSSQL_PID=Developer
   ports:
     - "1440:1433"
