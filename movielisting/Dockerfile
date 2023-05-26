@@ -1,7 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /App
-EXPOSE 8080
-EXPOSE 443
+EXPOSE 5337
 
 # Copy everything
 COPY . ./
